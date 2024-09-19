@@ -60,11 +60,11 @@ VLAN 40 - IT: 192.168.40.0/24
 VLAN 50 - CS: 192.168.50.0/24
 Branch VLANs: Similar subnetting for Branch departments
 
-###OSPF Configuration
+#### OSPF Configuration
 router ospf 1
  network 192.168.0.0 0.0.255.255 area 0
 
-###VPN Configuration
+#### VPN Configuration
 crypto ikev2 proposal vpn-proposal
  encryption aes-cbc-256
  integrity sha256
@@ -80,10 +80,10 @@ crypto map vpn-map 10 ipsec-isakmp
  set transform-set vpn-set
  match address 101
 
-###Access Control Lists (ACLs)
+#### Access Control Lists (ACLs)
 access-list 100 permit ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
 
-###Port Security
+#### Port Security
 switchport port-security
 switchport port-security maximum 1
 switchport port-security violation shutdown
